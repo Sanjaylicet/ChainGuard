@@ -38,32 +38,35 @@ function build402Middleware() {
   return (req: express.Request, res: express.Response, next: express.NextFunction) => {
     const paymentHeader =
       req.headers['x-payment'] ||
-      req.headers['x402-payment'] ||
-      req.headers['authorization'];
+      req.headers['x402-payment'];
 
     if (!paymentHeader) {
+      // Emit exact structure that @x402/hedera createPartiallySignedTransferTransaction expects
       return res.status(402).json({
         error: 'Payment Required',
         x402Version: 1,
         accepts: [
           {
             scheme: 'exact',
-            network: 'hedera-testnet',
-            maxAmountRequired: String(Math.round(price * 1e8)),
+            // CAIP2 format required by @x402/hedera
+            network: 'hedera:testnet',
+            // Field names as expected by the signer
+            amount: String(Math.round(price * 1e8)),
+            payTo: receiverId,
+            asset: '0.0.0',   // HBAR_ASSET_ID — required as plain string by @x402/hedera isHbarAsset
+            // feePayer must be in extra
+            extra: {
+              feePayer: process.env.HEDERA_PAYER_ACCOUNT_ID || 'dev',
+            },
+            // Human-readable metadata
             resource: `http://${req.headers.host}${req.path}`,
             description: `ChainGuard Lite safety report — ${price} HBAR`,
             mimeType: 'application/json',
-            payToAddress: receiverId,
-            asset: {
-              address: 'HBAR',
-              decimals: 8,
-            },
           },
         ],
       });
     }
 
-    // Payment header present — proceed (facilitator verification handled by @x402/hedera in production)
     (req as any).paymentStatus = 'verified';
     next();
   };

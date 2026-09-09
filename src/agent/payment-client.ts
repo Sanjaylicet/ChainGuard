@@ -5,7 +5,8 @@ const REPORT_SERVICE_URL = `http://localhost:${process.env.REPORT_SERVICE_PORT |
 
 // ============================================================
 // Build signed x402 payment payload using @x402/hedera
-// Uses createClientHederaSigner → createPartiallySignedTransferTransaction
+// createPartiallySignedTransferTransaction requires:
+//   { network (CAIP2), amount, payTo, asset, extra: { feePayer } }
 // ============================================================
 async function buildHederaPaymentHeader(paymentRequirements: any): Promise<string> {
   const payerId = process.env.HEDERA_PAYER_ACCOUNT_ID;
@@ -19,36 +20,39 @@ async function buildHederaPaymentHeader(paymentRequirements: any): Promise<strin
   const { createClientHederaSigner, HEDERA_TESTNET_CAIP2, PrivateKey } = await import('@x402/hedera');
 
   const key = PrivateKey.fromString(payerKey);
-  // createClientHederaSigner(accountId, privateKey, config?)
   const signer = createClientHederaSigner(payerId, key, { network: HEDERA_TESTNET_CAIP2 });
 
+  // Accept entry from 402 response — already in correct @x402/hedera shape
   const accept = paymentRequirements?.accepts?.[0];
   if (!accept) throw new Error('No payment accept entry in 402 response');
 
-  console.log('[payment-client] Signing payment for:', accept.payToAddress, 'amount:', accept.maxAmountRequired);
+  // Build requirements exactly as the signer expects
+  const signerRequirements = {
+    network: accept.network || HEDERA_TESTNET_CAIP2,   // "hedera:testnet"
+    amount: accept.amount || accept.maxAmountRequired,   // tinybars as string
+    payTo: accept.payTo || accept.payToAddress,          // receiver account ID
+    asset: accept.asset,                                  // { address: 'HBAR', decimals: 8 }
+    extra: accept.extra || { feePayer: payerId },         // must contain feePayer
+  };
 
-  // Use the signer's method to create a partially-signed transfer transaction
-  const signedTx = await signer.createPartiallySignedTransferTransaction({
-    payer: payerId,
-    payTo: accept.payToAddress,
-    asset: accept.asset,
-    amount: accept.maxAmountRequired,
-    network: HEDERA_TESTNET_CAIP2,
-  });
+  console.log('[payment-client] Signing HBAR payment:',
+    `${signerRequirements.amount} tinybars → ${signerRequirements.payTo}`,
+    `(feePayer: ${signerRequirements.extra?.feePayer})`
+  );
 
+  const signedTx = await signer.createPartiallySignedTransferTransaction(signerRequirements);
   console.log('[payment-client] ✅ HBAR payment signed');
 
-  // The signed transaction bytes become the payment header (base64)
+  // Serialize signed transaction → base64 string for the payment header
   if (typeof signedTx === 'string') return signedTx;
   if (signedTx && typeof (signedTx as any).toBytes === 'function') {
     return Buffer.from((signedTx as any).toBytes()).toString('base64');
   }
-  // Fallback: serialize the object
   return Buffer.from(JSON.stringify(signedTx)).toString('base64');
 }
 
 // ============================================================
-// Full x402 payment flow with retry
+// Full x402 payment flow: unpaid → 402 → sign → retry → report
 // ============================================================
 export async function fetchReportWithPayment(
   address: string,
@@ -66,6 +70,7 @@ export async function fetchReportWithPayment(
   });
 
   if (firstResponse.ok) {
+    // Dev bypass — server returned 200 without payment
     const report = await firstResponse.json() as SafetyReport;
     steps.push('report_generated');
     return { status: 'success', paymentSteps: steps, report };
@@ -87,12 +92,12 @@ export async function fetchReportWithPayment(
     paymentHeader = await buildHederaPaymentHeader(paymentRequirements);
     steps.push('payment_signed');
     steps.push('payment_submitted');
-    console.log('[payment-client] ✅ Payment signed and submitted');
+    console.log('[payment-client] ✅ Payment signed and submitted to Hedera testnet');
   } catch (err: any) {
     return { status: 'error', paymentSteps: steps, error: `Payment failed: ${err?.message}` };
   }
 
-  // ── Step 3: Retry with payment header ──
+  // ── Step 3: Retry with signed payment header ──
   console.log('[payment-client] Step 3: Retrying with x402 payment header...');
   const paidResponse = await fetch(`${REPORT_SERVICE_URL}/v1/safety-report`, {
     method: 'POST',
@@ -112,7 +117,7 @@ export async function fetchReportWithPayment(
   steps.push('payment_verified');
   const report = await paidResponse.json() as SafetyReport;
   steps.push('report_generated');
-  console.log('[payment-client] ✅ Report received');
+  console.log('[payment-client] ✅ Report received successfully');
 
   return { status: 'success', paymentSteps: steps, report };
 }
