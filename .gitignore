@@ -1,10 +1,8 @@
-# Environment variables and secrets
+# Secrets
 .env
 .env.local
-.env.*.local
-*.pem
 
-# Dependencies
+# Dependencies — NEVER commit
 node_modules/
 .pnpm-store/
 
@@ -13,14 +11,15 @@ dist/
 build/
 .vite/
 
+# Test artifacts
+test-paid-result.json
+
 # System / IDE
 .DS_Store
 Thumbs.db
 *.log
 npm-debug.log*
-yarn-debug.log*
-yarn-error.log*
 
-# Task logs & scratch files
+# Gemini / scratch
 .system_generated/
 scratch/

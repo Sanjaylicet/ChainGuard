@@ -3,15 +3,14 @@
   "version": "1.0.0",
   "description": "Testnet-only AI-assisted crypto safety screening service with The Graph and Hedera x402 payments",
   "main": "dist/index.js",
-  "type": "module",
   "scripts": {
     "build": "tsc",
     "check:providers": "tsx scripts/check-providers.ts",
     "test:paid-request": "tsx scripts/test-paid-request.ts",
-    "dev:report-service": "tsx src/report-service/server.ts",
-    "dev:agent": "tsx src/agent/server.ts",
-    "dev:web": "vite --config web/vite.config.ts",
-    "dev": "concurrently \"npm run dev:report-service\" \"npm run dev:agent\" \"npm run dev:web\"",
+    "dev:report-service": "tsx watch src/report-service/server.ts",
+    "dev:agent": "tsx watch src/agent/server.ts",
+    "dev:web": "vite web --config web/vite.config.ts",
+    "dev": "concurrently --names \"report,agent,web\" --prefix-colors \"cyan,yellow,magenta\" \"npm run dev:report-service\" \"npm run dev:agent\" \"npm run dev:web\"",
     "test": "vitest run"
   },
   "keywords": [
@@ -39,6 +38,8 @@
     "@types/cors": "^2.8.17",
     "@types/express": "^4.17.21",
     "@types/node": "^22.13.4",
+    "@types/react": "^19.2.18",
+    "@types/react-dom": "^19.2.7",
     "@vitejs/plugin-react": "^4.3.4",
     "concurrently": "^9.1.2",
     "react": "^18.3.1",
