@@ -1,8 +1,9 @@
-# Secrets
+# Environment variables and secrets — NEVER commit these
 .env
 .env.local
+.env.*.local
 
-# Dependencies — NEVER commit
+# Dependencies — NEVER commit (too large, filename issues)
 node_modules/
 .pnpm-store/
 
@@ -20,6 +21,6 @@ Thumbs.db
 *.log
 npm-debug.log*
 
-# Gemini / scratch
+# Gemini scratch
 .system_generated/
 scratch/
