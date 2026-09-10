@@ -1,0 +1,504 @@
+<!DOCTYPE html>
+
+<html lang="en"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" rel="stylesheet"/><link href="https://fonts.googleapis.com" rel="preconnect"/><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/><link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;600;700&amp;family=Space+Mono:wght@400;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/><style>@layer base{html,body{margin:0;padding:0;}body{overscroll-behavior:none;}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}.clay-pill{box-shadow:6px 6px 14px rgba(166,153,142,0.35),-4px -4px 10px rgba(255,255,255,0.85),inset 1px 1px 2px rgba(255,255,255,0.8),inset -1px -1px 2px rgba(93,0,25,0.06);}.clay-pill-amber{box-shadow:6px 6px 14px rgba(126,87,0,0.25),-4px -4px 10px rgba(255,255,255,0.85),inset 1px 1px 2px rgba(255,255,255,0.7),inset -1px -1px 2px rgba(113,77,0,0.15);}.clay-card{box-shadow:14px 14px 28px rgba(166,153,142,0.4),-10px -10px 24px rgba(255,255,255,0.95),inset 3px 3px 5px rgba(255,255,255,0.7),inset -3px -3px 6px rgba(70,50,50,0.08);}</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config = { darkMode: "class", theme: { extend: { "colors": { "surface-container": "#f0ede9", "inverse-on-surface": "#f3f0ec", "on-primary-fixed-variant": "#842133", "surface-container-lowest": "#ffffff", "outline-variant": "#ddc0c1", "on-tertiary-container": "#8bb88e", "on-primary-fixed": "#40000f", "primary-fixed-dim": "#ffb2b8", "secondary": "#7e5700", "on-surface-variant": "#564243", "on-tertiary": "#ffffff", "surface-dim": "#dcdad6", "inverse-surface": "#31302e", "on-error": "#ffffff", "primary": "#5d0019", "on-tertiary-fixed": "#002109", "surface-container-highest": "#e5e2de", "inverse-primary": "#ffb2b8", "on-secondary-container": "#714d00", "error": "#ba1a1a", "secondary-fixed": "#ffdead", "tertiary-fixed-dim": "#a4d2a6", "on-error-container": "#93000a", "surface": "#fcf9f5", "on-secondary-fixed-variant": "#604100", "on-background": "#1c1c19", "on-surface": "#1c1c19", "surface-bright": "#fcf9f5", "tertiary-fixed": "#bfeec1", "on-primary-container": "#ff8a96", "surface-tint": "#a43949", "primary-container": "#7c1a2d", "on-secondary-fixed": "#281900", "outline": "#897172", "tertiary": "#073214", "primary-fixed": "#ffdadb", "surface-variant": "#e5e2de", "surface-container-high": "#ebe8e4", "on-primary": "#ffffff", "background": "#fcf9f5", "secondary-fixed-dim": "#fabc4d", "error-container": "#ffdad6", "on-secondary": "#ffffff", "surface-container-low": "#f6f3ef", "secondary-container": "#fdbe50", "tertiary-container": "#204928", "on-tertiary-fixed-variant": "#274f2e" }, "borderRadius": { "DEFAULT": "1rem", "lg": "2rem", "xl": "3rem", "full": "9999px" }, "spacing": { "space-xs": "0.5rem", "space-xxs": "0.25rem", "space-lg": "1.5rem", "space-md": "1rem", "gutter-mobile": "1rem", "gutter-desktop": "1.5rem", "space-3xl": "4rem", "container-max": "1200px", "space-sm": "0.75rem", "space-2xl": "3rem", "space-xl": "2rem" }, "fontFamily": { "label-caps": ["Outfit"], "headline-md": ["Outfit"], "body-lg": ["Outfit"], "mono-data": ["Space Mono"], "headline-lg": ["Outfit"], "body-sm": ["Outfit"], "headline-sm": ["Outfit"], "display-xl-mobile": ["Outfit"], "display-xl": ["Outfit"], "title-md": ["Outfit"], "headline-lg-mobile": ["Outfit"], "body-md": ["Outfit"] }, "fontSize": { "label-caps": ["11px", { "lineHeight": "14px", "letterSpacing": "0.08em", "fontWeight": "700" }], "headline-md": ["24px", { "lineHeight": "32px", "letterSpacing": "-0.01em", "fontWeight": "600" }], "body-lg": ["18px", { "lineHeight": "28px", "fontWeight": "400" }], "mono-data": ["13px", { "lineHeight": "20px", "letterSpacing": "-0.01em", "fontWeight": "400" }], "headline-lg": ["32px", { "lineHeight": "40px", "letterSpacing": "-0.02em", "fontWeight": "700" }], "body-sm": ["13px", { "lineHeight": "18px", "fontWeight": "400" }], "headline-sm": ["20px", { "lineHeight": "28px", "fontWeight": "600" }], "display-xl-mobile": ["36px", { "lineHeight": "44px", "letterSpacing": "-0.02em", "fontWeight": "700" }], "display-xl": ["56px", { "lineHeight": "64px", "letterSpacing": "-0.03em", "fontWeight": "700" }], "title-md": ["16px", { "lineHeight": "24px", "fontWeight": "600" }], "headline-lg-mobile": ["26px", { "lineHeight": "34px", "letterSpacing": "-0.01em", "fontWeight": "700" }], "body-md": ["15px", { "lineHeight": "22px", "fontWeight": "400" }] } } } };</script></head><body class="bg-surface font-body-md text-body-md text-on-surface"><header class="fixed top-0 w-full z-50 bg-surface/90 backdrop-blur-xl shadow-[0_4px_20px_rgba(166,153,142,0.18)]"><div class="h-20 max-w-[1200px] mx-auto px-space-lg flex items-center justify-between gap-space-md"><div class="flex items-center gap-space-md"><div class="flex items-center gap-space-sm"><span class="flex items-center justify-center w-10 h-10 rounded-full bg-primary-container text-on-primary shadow-md"><span class="material-symbols-outlined text-[20px]">verified_user</span></span><div class="flex flex-col"><span class="font-headline-sm text-headline-sm text-primary leading-tight tracking-tight">ChainGuard <span class="font-body-sm text-body-sm text-secondary font-semibold">Lite</span></span><span class="font-label-caps text-label-caps uppercase text-on-surface-variant">AI Contract Sentinel</span></div></div><div class="clay-pill bg-error-container text-on-error-container px-space-sm py-space-xxs rounded-full flex items-center gap-1.5"><span class="w-2 h-2 rounded-full bg-error animate-ping"></span><span class="font-label-caps text-label-caps">TESTNET ONLY</span></div></div><nav class="hidden xl:flex items-center gap-space-xs" data-active-classes="bg-surface-container-highest text-primary font-semibold"><a aria-current="page" class="px-space-md py-space-xs rounded-full transition-all bg-surface-container-highest text-primary font-semibold" data-path="contract-screener" href="#">Screen Contract</a><a class="px-space-md py-space-xs rounded-full text-on-surface-variant hover:text-on-surface font-title-md text-title-md transition-all" data-path="live-threat-feed" href="#">Threat Feed</a><a class="px-space-md py-space-xs rounded-full text-on-surface-variant hover:text-on-surface font-title-md text-title-md transition-all" data-path="x402-payment-faucet" href="#">x402 Faucet</a><a class="px-space-md py-space-xs rounded-full text-on-surface-variant hover:text-on-surface font-title-md text-title-md transition-all" data-path="graph-indexing-status" href="#">Graph Sync</a></nav><div class="flex items-center gap-space-sm"><div class="clay-pill bg-surface-container-low px-space-sm py-space-xxs rounded-full hidden md:flex items-center gap-space-xxs"><span class="material-symbols-outlined text-[16px] text-tertiary">schema</span><span class="font-mono-data text-mono-data text-on-surface">The Graph Indexed</span></div><div class="clay-pill-amber bg-secondary-fixed px-space-sm py-space-xxs rounded-full hidden lg:flex items-center gap-space-xxs"><span class="material-symbols-outlined text-[16px] text-on-secondary-container">bolt</span><span class="font-mono-data text-mono-data text-on-secondary-container font-semibold">x402: 0.001 HBAR</span></div><div class="clay-pill bg-surface-container px-space-sm py-space-xxs rounded-full flex items-center gap-1.5"><span class="w-2 h-2 rounded-full bg-tertiary-container"></span><span class="font-mono-data text-mono-data text-on-surface font-medium hidden sm:inline">Hedera Testnet (296)</span><span class="font-mono-data text-mono-data text-on-surface font-medium sm:hidden">296</span></div><a class="w-9 h-9 rounded-full bg-surface-container-low flex items-center justify-center text-on-surface-variant hover:text-on-surface transition-colors clay-pill" href="https://github.com" rel="noreferrer" target="_blank" title="GitHub Repository"><span class="material-symbols-outlined text-[18px]">code</span></a><a class="w-9 h-9 rounded-full bg-surface-container-low flex items-center justify-center text-on-surface-variant hover:text-on-surface transition-colors clay-pill" href="#" title="Docs"><span class="material-symbols-outlined text-[18px]">menu_book</span></a><img alt="Profile" class="w-8 h-8 rounded-full object-cover ml-1 shadow-sm ring-2 ring-primary-fixed" src="https://lh3.googleusercontent.com/aida/AEtjO1WU8XWyChd5kHzQp9e4g5Lmq91tuKMOtDwnmkxx7t4TePB7ULOiHC2gb4smUJJVuuQZSQ6tXqL-gDpzfT2_eTGQK08GEbTubWO1dbHSiJlONfYv82jWfmi_A-4UNXq_s8wiHknCe9ibqJkQo6R1jvRRWCaMOBWqreaMhIsFG12BNgKRamocvZqiAYdurkzpjmM8xuXy9RhlGaRC5J27oNvCQXzUK1haPzejiqk8TUCmT1dm8Svjf31gAVVUsN2rYwfMa0lKeT0DL9M"/></div></div></header><main class="w-full pt-20 bg-surface"><div class="flex flex-col w-full max-w-[1200px] mx-auto px-space-md sm:px-space-lg pb-space-3xl gap-space-2xl">
+<!-- TOP HERO & BRAND PRESENTATION -->
+<section class="flex flex-col items-center text-center pt-space-md gap-space-md relative">
+<!-- Ambient back glow for depth -->
+<div class="absolute -top-10 w-96 h-48 bg-secondary-fixed/40 blur-3xl rounded-full pointer-events-none -z-10"></div>
+<!-- Hero Badges Group -->
+<div class="flex flex-wrap items-center justify-center gap-space-xs sm:gap-space-sm">
+<div class="clay-pill bg-error-container text-on-error-container px-space-md py-1 rounded-full flex items-center gap-2">
+<span class="w-2.5 h-2.5 rounded-full bg-error animate-pulse"></span>
+<span class="font-label-caps text-label-caps uppercase tracking-wider">TESTNET ONLY (DEMO)</span>
+</div>
+<div class="clay-pill-amber bg-secondary-fixed text-on-secondary-fixed px-space-md py-1 rounded-full flex items-center gap-1.5">
+<span class="material-symbols-outlined text-[16px] text-secondary">flash_on</span>
+<span class="font-mono-data text-mono-data font-semibold">Hedera Testnet: 0.001 HBAR</span>
+</div>
+<div class="clay-pill bg-surface-container-low text-on-surface-variant px-space-md py-1 rounded-full flex items-center gap-1.5">
+<span class="material-symbols-outlined text-[16px] text-primary">hub</span>
+<span class="font-body-sm text-body-sm font-medium">Uniswap V3 Arbitrum Sepolia Subgraph</span>
+</div>
+</div>
+<!-- Main Shield Visual & Title Lockup -->
+<div class="flex flex-col items-center gap-space-xs mt-space-xs">
+<div class="relative group">
+<div class="w-24 h-24 sm:w-28 sm:h-28 rounded-3xl clay-card bg-surface-container-lowest p-space-xs flex items-center justify-center transform transition-transform hover:scale-105 active:scale-95 duration-200">
+<img alt="ChainGuard Lite Shield Emblem with Chain Link" class="w-full h-full object-contain filter drop-shadow-sm" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAWZD70Cw8fmHi1qufJVkQ1TFLf9WdMxbs9PWcrzeXKce49sN7pl0eyrVQwT011BczfLBBNoPI-qoWsRmrpZJX3OM5xO3ms9_t1hEyOfRPOwgDgQjI6Lkk0DfABIWTunnu_sKiF4Djls45oMZH3oNRWVvlLMY7IeEvo9zDoedabUlXsuF7iC3vrSztrOs8z_8wkikbnpYESW3co3gb8SMybtwBXq3GLhj3xhyNm7fWIxMz4EhV4b37p2qqFVQjKS0IPX08"/>
+</div>
+<span class="absolute -bottom-2 -right-2 bg-primary text-on-primary font-mono-data text-[10px] px-2 py-0.5 rounded-full clay-pill shadow-sm">v1.0.4</span>
+</div>
+<div class="flex flex-col items-center mt-space-xs">
+<h1 class="font-display-xl-mobile sm:font-display-xl text-display-xl-mobile sm:text-display-xl text-primary tracking-tight font-bold">
+          ChainGuard <span class="text-secondary">Lite</span>
+</h1>
+<p class="max-w-2xl font-body-lg text-body-lg text-on-surface-variant text-center mt-space-xxs">
+          Testnet-Only AI-Assisted Crypto Safety Screening powered by <strong class="text-on-surface">The Graph</strong> &amp; <strong class="text-on-surface">Hedera x402 Micropayments</strong>.
+        </p>
+</div>
+</div>
+</section>
+<!-- SCREENING INPUT & TRIGGER FORM (CLAY RAISED CONTAINER) -->
+<section class="clay-card bg-surface-container-lowest rounded-lg p-space-lg sm:p-space-xl flex flex-col gap-space-lg transition-all">
+<div class="flex flex-col sm:flex-row sm:items-center justify-between gap-space-sm">
+<div class="flex items-center gap-space-xs">
+<span class="w-8 h-8 rounded-full bg-primary-fixed text-primary flex items-center justify-center">
+<span class="material-symbols-outlined text-[18px]">travel_explore</span>
+</span>
+<h2 class="font-headline-sm text-headline-sm text-on-surface">Target EVM Contract / Address</h2>
+</div>
+<!-- Segmented Type Selector -->
+<div class="inline-flex p-1 rounded-full bg-surface-container-high shadow-[inset_3px_3px_6px_rgba(166,153,142,0.35),inset_-3px_-3px_6px_rgba(255,255,255,0.9)]" id="subjectToggleGroup">
+<button class="px-space-md py-1 rounded-full font-title-md text-title-md transition-all text-on-surface-variant hover:text-on-surface" id="toggleWallet" onclick="setSubjectType('wallet')" type="button">
+          Wallet
+        </button>
+<button class="px-space-md py-1 rounded-full font-title-md text-title-md transition-all clay-pill bg-surface-container-lowest text-primary font-semibold shadow-sm" id="toggleProtocol" onclick="setSubjectType('protocol')" type="button">
+          Protocol
+        </button>
+</div>
+</div>
+<!-- Address Input and Instant Trigger Bar -->
+<div class="flex flex-col gap-space-md">
+<div class="relative flex flex-col sm:flex-row items-stretch sm:items-center gap-space-sm">
+<div class="relative flex-1">
+<span class="absolute left-4 top-1/2 -translate-y-1/2 text-on-surface-variant pointer-events-none">
+<span class="material-symbols-outlined text-[20px]">token</span>
+</span>
+<input class="w-full pl-12 pr-4 py-3.5 rounded-full bg-surface-container-low font-mono-data text-mono-data text-on-surface focus:outline-none shadow-[inset_4px_4px_8px_rgba(166,153,142,0.32),inset_-4px_-4px_8px_rgba(255,255,255,0.9)] focus:shadow-[inset_2px_2px_4px_rgba(229,169,60,0.4),0_0_0_2px_rgba(229,169,60,0.3)] transition-all" id="contractAddressInput" placeholder="Enter EVM Address (0x...)" type="text" value="0x1f98431c8aD98523631AE4a59f267346ea31F984"/>
+</div>
+<div class="flex items-center gap-space-xs flex-shrink-0">
+<!-- Preset Demo Helper Button -->
+<button class="clay-pill bg-surface-container px-space-md py-3.5 rounded-full font-title-md text-title-md text-on-surface hover:bg-surface-container-high transition-transform active:translate-y-0.5 flex items-center gap-1.5" onclick="cycleDemoAddress()" title="Load sample Uniswap V3 pool address" type="button">
+<span class="material-symbols-outlined text-[18px] text-secondary">casino</span>
+<span>Demo Address</span>
+</button>
+<!-- Primary CTA Button (Volumetric Clay Button) -->
+<button class="clay-pill bg-primary hover:bg-primary-container text-on-primary px-space-lg py-3.5 rounded-full font-title-md text-title-md flex items-center justify-center gap-2 shadow-[6px_6px_14px_rgba(124,26,45,0.35),-4px_-4px_10px_rgba(255,255,255,0.85)] active:translate-y-0.5 active:scale-[0.98] transition-all" id="runAuditBtn" onclick="simulateAuditFlow()" type="button">
+<span class="material-symbols-outlined text-[20px] text-secondary-fixed">bolt</span>
+<span class="font-semibold tracking-wide">Generate Safety Report</span>
+<span class="font-mono-data text-body-sm opacity-90 font-normal ml-0.5">(0.001 HBAR)</span>
+</button>
+</div>
+</div>
+<!-- Helper Hint Ribbon -->
+<div class="flex flex-wrap items-center justify-between text-body-sm text-on-surface-variant px-space-xs gap-space-xs">
+<div class="flex items-center gap-1">
+<span class="material-symbols-outlined text-[16px] text-tertiary">check_circle</span>
+<span>Queries Uniswap V3 Arbitrum Sepolia Subgraph instantly</span>
+</div>
+<div class="flex items-center gap-2 font-mono-data text-[12px]">
+<span>Facilitator: <span class="text-primary font-semibold">@x402/hedera</span></span>
+<span>•</span>
+<span>Payload: <span class="text-secondary font-semibold">JSON-RPC /v1/safety-report</span></span>
+</div>
+</div>
+</div>
+</section>
+<!-- REAL-TIME 5-STAGE x402 PAYMENT LIFECYCLE TIMELINE -->
+<section class="clay-card bg-surface-container-lowest rounded-lg p-space-lg sm:p-space-xl flex flex-col gap-space-lg">
+<div class="flex flex-col sm:flex-row sm:items-center justify-between gap-space-xs pb-space-xs">
+<div class="flex items-center gap-space-xs">
+<div class="w-9 h-9 rounded-full bg-secondary-fixed text-on-secondary-fixed flex items-center justify-center shadow-sm">
+<span class="material-symbols-outlined text-[20px]">currency_exchange</span>
+</div>
+<div>
+<h2 class="font-headline-sm text-headline-sm text-on-surface">x402 Micropayment &amp; Verification Lifecycle</h2>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Real-time settlement protocol trace for sub-cent contract safety verification</p>
+</div>
+</div>
+<div class="clay-pill bg-tertiary-fixed text-on-tertiary-fixed px-space-sm py-1 rounded-full flex items-center gap-1.5 self-start sm:self-auto">
+<span class="w-2 h-2 rounded-full bg-tertiary"></span>
+<span class="font-mono-data text-body-sm font-semibold">Settled (100,000 tinybars)</span>
+</div>
+</div>
+<!-- Stepper 5-Stage Visual Grid -->
+<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-space-sm relative">
+<!-- Stage 1 -->
+<div class="p-space-md rounded-2xl bg-surface-container-low flex flex-col gap-space-xs relative transition-all duration-300">
+<div class="flex items-center justify-between">
+<span class="font-mono-data text-[11px] font-bold text-primary tracking-wider uppercase">Stage 01</span>
+<span class="w-6 h-6 rounded-full bg-tertiary-fixed text-tertiary flex items-center justify-center">
+<span class="material-symbols-outlined text-[14px] font-bold">done</span>
+</span>
+</div>
+<h3 class="font-title-md text-title-md text-on-surface leading-tight">payment_required</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant">HTTP 402 challenge issued from <code class="font-mono-data text-[12px] text-primary">/v1/safety-report</code>.</p>
+<span class="font-mono-data text-[11px] text-secondary mt-auto">Cost: 0.001 HBAR</span>
+</div>
+<!-- Stage 2 -->
+<div class="p-space-md rounded-2xl bg-surface-container-low flex flex-col gap-space-xs relative transition-all duration-300">
+<div class="flex items-center justify-between">
+<span class="font-mono-data text-[11px] font-bold text-primary tracking-wider uppercase">Stage 02</span>
+<span class="w-6 h-6 rounded-full bg-tertiary-fixed text-tertiary flex items-center justify-center">
+<span class="material-symbols-outlined text-[14px] font-bold">done</span>
+</span>
+</div>
+<h3 class="font-title-md text-title-md text-on-surface leading-tight">payment_signed</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant">100,000 tinybars cryptographically signed by payer <span class="font-mono-data text-[11px] text-on-surface font-semibold">0.0.8231465</span>.</p>
+<span class="font-mono-data text-[11px] text-secondary mt-auto">SDK: @x402/hedera</span>
+</div>
+<!-- Stage 3 -->
+<div class="p-space-md rounded-2xl bg-surface-container-low flex flex-col gap-space-xs relative transition-all duration-300">
+<div class="flex items-center justify-between">
+<span class="font-mono-data text-[11px] font-bold text-primary tracking-wider uppercase">Stage 03</span>
+<span class="w-6 h-6 rounded-full bg-tertiary-fixed text-tertiary flex items-center justify-center">
+<span class="material-symbols-outlined text-[14px] font-bold">done</span>
+</span>
+</div>
+<h3 class="font-title-md text-title-md text-on-surface leading-tight">payment_submitted</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Hedera consensus layer broadcast verified.</p>
+<a class="font-mono-data text-[11px] text-primary hover:text-secondary underline flex items-center gap-1 mt-auto" href="https://hashscan.io/testnet" rel="noreferrer" target="_blank">
+<span>HashScan Explorer</span>
+<span class="material-symbols-outlined text-[12px]">open_in_new</span>
+</a>
+</div>
+<!-- Stage 4 -->
+<div class="p-space-md rounded-2xl bg-surface-container-low flex flex-col gap-space-xs relative transition-all duration-300">
+<div class="flex items-center justify-between">
+<span class="font-mono-data text-[11px] font-bold text-primary tracking-wider uppercase">Stage 04</span>
+<span class="w-6 h-6 rounded-full bg-tertiary-fixed text-tertiary flex items-center justify-center">
+<span class="material-symbols-outlined text-[14px] font-bold">done</span>
+</span>
+</div>
+<h3 class="font-title-md text-title-md text-on-surface leading-tight">payment_verified</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Payment confirmed by decentralized x402 facilitator node.</p>
+<span class="font-mono-data text-[11px] text-secondary mt-auto">Latency: 418ms</span>
+</div>
+<!-- Stage 5 -->
+<div class="p-space-md rounded-2xl bg-surface-container-high flex flex-col gap-space-xs relative clay-pill shadow-sm">
+<div class="flex items-center justify-between">
+<span class="font-mono-data text-[11px] font-bold text-primary tracking-wider uppercase">Stage 05</span>
+<span class="w-6 h-6 rounded-full bg-primary text-on-primary flex items-center justify-center shadow-xs">
+<span class="material-symbols-outlined text-[14px]">auto_awesome</span>
+</span>
+</div>
+<h3 class="font-title-md text-title-md text-primary font-bold leading-tight">report_generated</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant">The Graph queried + deterministic safety synthesis delivered.</p>
+<span class="font-mono-data text-[11px] text-tertiary font-bold mt-auto">Status: Ready</span>
+</div>
+</div>
+<!-- Flow Progress Indicator Bar -->
+<div class="w-full bg-surface-container rounded-full h-2 overflow-hidden shadow-[inset_1px_1px_3px_rgba(166,153,142,0.4)]">
+<div class="bg-gradient-to-r from-secondary to-primary h-full w-full rounded-full transition-all duration-500"></div>
+</div>
+</section>
+<!-- SAFETY SCREENING RESULT CARD (CORE DELIVERABLE) -->
+<section class="clay-card bg-surface-container-lowest rounded-lg p-space-lg sm:p-space-xl flex flex-col gap-space-lg relative overflow-hidden">
+<!-- Ambient Accent Gradient Band -->
+<div class="h-2 w-full absolute top-0 left-0 bg-gradient-to-r from-primary via-secondary to-tertiary"></div>
+<!-- Report Header & Identifier Meta -->
+<div class="flex flex-col lg:flex-row lg:items-center justify-between gap-space-md border-b pb-space-md border-surface-container">
+<div class="flex flex-col gap-1">
+<div class="flex items-center gap-space-xs flex-wrap">
+<span class="font-label-caps text-label-caps uppercase text-on-surface-variant">Report Reference</span>
+<span class="font-mono-data text-body-md font-bold text-primary bg-primary-fixed px-2.5 py-0.5 rounded-full clay-pill">cg-ad2ed604</span>
+<span class="font-mono-data text-[12px] text-on-surface-variant">Indexed: 2026-09-08 14:22:01 UTC</span>
+</div>
+<h2 class="font-headline-md text-headline-md text-on-surface font-bold">Automated Safety Screening Assessment</h2>
+</div>
+<!-- Quick Status Indicators -->
+<div class="flex items-center gap-space-xs">
+<div class="clay-pill bg-surface-container-high px-space-md py-1.5 rounded-full flex items-center gap-2">
+<span class="material-symbols-outlined text-[16px] text-tertiary">verified</span>
+<span class="font-mono-data text-body-sm text-on-surface">Target: 0x1f98...F984</span>
+</div>
+<div class="clay-pill bg-surface-container-high px-space-md py-1.5 rounded-full flex items-center gap-2">
+<span class="material-symbols-outlined text-[16px] text-secondary">lan</span>
+<span class="font-mono-data text-body-sm text-on-surface">Chain: Arbitrum Sepolia</span>
+</div>
+</div>
+</div>
+<!-- Risk Level Highlight Showcase (Puffy Amber Pill & Classification Guide) -->
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-space-md items-stretch">
+<!-- Big Risk Badge Callout -->
+<div class="lg:col-span-4 rounded-3xl bg-secondary-fixed/50 p-space-lg flex flex-col justify-between gap-space-md shadow-[inset_2px_2px_5px_rgba(255,255,255,0.9),inset_-2px_-2px_4px_rgba(126,87,0,0.12)]">
+<div class="flex items-center justify-between">
+<span class="font-label-caps text-label-caps uppercase text-on-secondary-fixed tracking-wider">Classification</span>
+<span class="w-3 h-3 rounded-full bg-secondary animate-ping"></span>
+</div>
+<div class="flex flex-col gap-1 my-space-xs">
+<div class="clay-pill-amber bg-secondary text-surface px-space-lg py-2.5 rounded-full inline-flex items-center justify-center gap-2 shadow-md">
+<span class="material-symbols-outlined text-[24px] text-secondary-fixed">warning</span>
+<span class="font-headline-sm text-headline-sm font-bold tracking-tight">Needs review</span>
+</div>
+<span class="font-body-sm text-body-sm text-center text-on-secondary-fixed-variant mt-2">
+            Confidence: <strong class="text-on-surface">Limited (Testnet indexed sample)</strong>
+</span>
+</div>
+<!-- 3-Tier Classification Context -->
+<div class="flex flex-col gap-1.5 pt-space-xs border-t border-secondary/15">
+<span class="font-label-caps text-[10px] uppercase text-on-secondary-fixed tracking-wide">3-Tier Risk Hierarchy:</span>
+<div class="flex items-center justify-between text-[11px] font-mono-data">
+<span class="text-tertiary font-bold">1. Low signal</span>
+<span class="text-secondary font-bold underline decoration-2">2. Needs review</span>
+<span class="text-error font-bold">3. High concern</span>
+</div>
+</div>
+</div>
+<!-- Plain Language AI Synthesis Box -->
+<div class="lg:col-span-8 rounded-3xl bg-surface-container-low p-space-lg flex flex-col justify-between gap-space-sm shadow-[inset_3px_3px_6px_rgba(166,153,142,0.25),inset_-3px_-3px_6px_rgba(255,255,255,0.9)]">
+<div class="flex items-center gap-2 text-primary">
+<span class="material-symbols-outlined text-[20px]">smart_toy</span>
+<span class="font-label-caps text-label-caps uppercase tracking-wider font-bold">AI Constraint Synthesizer Output</span>
+</div>
+<blockquote class="font-body-lg text-body-lg text-on-surface leading-relaxed italic bg-surface-container-lowest/70 p-space-md rounded-2xl shadow-sm">
+          “The address has recent indexed activity on Uniswap V3 Arbitrum Sepolia, but the available evidence is not sufficient to establish long-term safety without independent contract verification.”
+        </blockquote>
+<div class="flex flex-wrap items-center justify-between gap-space-xs pt-1 text-on-surface-variant font-mono-data text-body-sm">
+<span class="flex items-center gap-1">
+<span class="material-symbols-outlined text-[16px] text-tertiary">psychology</span>
+            Synthesizer: <strong class="text-on-surface">Deterministic Guard LLM</strong>
+</span>
+<span class="flex items-center gap-1">
+<span class="material-symbols-outlined text-[16px] text-secondary">memory</span>
+            Guardrail: Strict evidence-bound prompt
+          </span>
+</div>
+</div>
+</div>
+<!-- TWO-COLUMN DETAILED BREAKDOWN (EVIDENCE VS REASONING) -->
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-space-lg mt-space-xs">
+<!-- Left Column: Normalized Evidence Table from The Graph (7 Cols) -->
+<div class="lg:col-span-6 flex flex-col gap-space-md">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-space-xs">
+<span class="w-8 h-8 rounded-full bg-surface-container-high text-primary flex items-center justify-center">
+<span class="material-symbols-outlined text-[18px]">table_chart</span>
+</span>
+<h3 class="font-title-md text-title-md text-on-surface">The Graph Evidence Telemetry</h3>
+</div>
+<span class="clay-pill bg-tertiary-fixed text-on-tertiary-fixed px-space-xs py-0.5 rounded-full font-mono-data text-[11px] font-bold">
+            Data Complete: TRUE
+          </span>
+</div>
+<!-- Evidence Data Table in Recessed Clay Bed -->
+<div class="rounded-2xl bg-surface-container-low p-space-sm shadow-[inset_3px_3px_6px_rgba(166,153,142,0.3),inset_-3px_-3px_6px_rgba(255,255,255,0.9)] overflow-hidden">
+<table class="w-full text-left font-mono-data text-body-sm">
+<tbody>
+<tr class="border-b border-surface-container-high">
+<td class="py-2.5 px-3 text-on-surface-variant flex items-center gap-2">
+<span class="material-symbols-outlined text-[16px] text-primary">data_object</span>
+<span>dataSource</span>
+</td>
+<td class="py-2.5 px-3 font-semibold text-right text-on-surface">The Graph Subgraph</td>
+</tr>
+<tr class="border-b border-surface-container-high">
+<td class="py-2.5 px-3 text-on-surface-variant flex items-center gap-2">
+<span class="material-symbols-outlined text-[16px] text-secondary">analytics</span>
+<span>eventCount</span>
+</td>
+<td class="py-2.5 px-3 font-bold text-right text-primary">12 events</td>
+</tr>
+<tr class="border-b border-surface-container-high">
+<td class="py-2.5 px-3 text-on-surface-variant flex items-center gap-2">
+<span class="material-symbols-outlined text-[16px] text-secondary">group</span>
+<span>uniqueCounterparties</span>
+</td>
+<td class="py-2.5 px-3 font-semibold text-right text-on-surface">7 addresses</td>
+</tr>
+<tr class="border-b border-surface-container-high">
+<td class="py-2.5 px-3 text-on-surface-variant flex items-center gap-2">
+<span class="material-symbols-outlined text-[16px] text-secondary">update</span>
+<span>recentEventCount (7d)</span>
+</td>
+<td class="py-2.5 px-3 font-semibold text-right text-on-surface">5 events</td>
+</tr>
+<tr class="border-b border-surface-container-high">
+<td class="py-2.5 px-3 text-on-surface-variant flex items-center gap-2">
+<span class="material-symbols-outlined text-[16px] text-secondary">handshake</span>
+<span>protocolInteractions</span>
+</td>
+<td class="py-2.5 px-3 font-semibold text-right text-on-surface">3 pools</td>
+</tr>
+<tr class="border-b border-surface-container-high">
+<td class="py-2.5 px-3 text-on-surface-variant flex items-center gap-2">
+<span class="material-symbols-outlined text-[16px] text-on-surface-variant">calendar_today</span>
+<span>firstSeen</span>
+</td>
+<td class="py-2.5 px-3 text-right text-on-surface">2026-08-14</td>
+</tr>
+<tr>
+<td class="py-2.5 px-3 text-on-surface-variant flex items-center gap-2">
+<span class="material-symbols-outlined text-[16px] text-on-surface-variant">event_available</span>
+<span>lastSeen</span>
+</td>
+<td class="py-2.5 px-3 text-right text-on-surface">2026-09-08</td>
+</tr>
+</tbody>
+</table>
+</div>
+<!-- Metric Spark Visualization Widget -->
+<div class="clay-pill bg-surface-container-low p-space-md rounded-2xl flex items-center justify-between gap-space-sm">
+<div class="flex flex-col">
+<span class="font-label-caps text-label-caps uppercase text-on-surface-variant">Interaction Density</span>
+<span class="font-headline-sm text-headline-sm text-on-surface font-bold">Low Frequency</span>
+</div>
+<!-- Minimal Inline SVG Trend Bar -->
+<svg class="w-32 h-8 text-secondary" fill="none" viewbox="0 0 120 28">
+<rect fill="currentColor" height="10" opacity="0.3" rx="3" width="12" x="5" y="18"></rect>
+<rect fill="currentColor" height="14" opacity="0.5" rx="3" width="12" x="25" y="14"></rect>
+<rect fill="currentColor" height="8" opacity="0.4" rx="3" width="12" x="45" y="20"></rect>
+<rect fill="currentColor" height="20" opacity="0.8" rx="3" width="12" x="65" y="8"></rect>
+<rect fill="currentColor" height="16" opacity="0.6" rx="3" width="12" x="85" y="12"></rect>
+<rect fill="currentColor" height="24" rx="3" width="12" x="105" y="4"></rect>
+</svg>
+</div>
+</div>
+<!-- Right Column: AI-Constrained Reasons, Recommended Checks, Limitations (5 Cols) -->
+<div class="lg:col-span-6 flex flex-col gap-space-md">
+<!-- AI Constrained Reasons (3 items) -->
+<div class="flex flex-col gap-space-xs">
+<div class="flex items-center gap-space-xs">
+<span class="w-7 h-7 rounded-full bg-secondary-fixed text-secondary flex items-center justify-center">
+<span class="material-symbols-outlined text-[16px]">find_in_page</span>
+</span>
+<h4 class="font-title-md text-title-md text-on-surface">Identified Observations (3)</h4>
+</div>
+<ul class="flex flex-col gap-2">
+<li class="p-space-sm rounded-xl bg-surface-container-low flex items-start gap-2 shadow-xs">
+<span class="material-symbols-outlined text-[18px] text-secondary flex-shrink-0 mt-0.5">info</span>
+<span class="font-body-md text-body-md text-on-surface"><strong>Recent Activity Spike:</strong> 5 of the 12 observed events transpired within the past 7 days.</span>
+</li>
+<li class="p-space-sm rounded-xl bg-surface-container-low flex items-start gap-2 shadow-xs">
+<span class="material-symbols-outlined text-[18px] text-secondary flex-shrink-0 mt-0.5">info</span>
+<span class="font-body-md text-body-md text-on-surface"><strong>Narrow Participant Cluster:</strong> Only 7 unique counterparties detected in subgraph event history.</span>
+</li>
+<li class="p-space-sm rounded-xl bg-surface-container-low flex items-start gap-2 shadow-xs">
+<span class="material-symbols-outlined text-[18px] text-secondary flex-shrink-0 mt-0.5">info</span>
+<span class="font-body-md text-body-md text-on-surface"><strong>Arbitrum Sepolia Deployment:</strong> Testing environment activity cannot guarantee mainnet protocol stability.</span>
+</li>
+</ul>
+</div>
+<!-- Recommended Practical Checks (3 items) -->
+<div class="flex flex-col gap-space-xs">
+<div class="flex items-center gap-space-xs">
+<span class="w-7 h-7 rounded-full bg-tertiary-fixed text-tertiary flex items-center justify-center">
+<span class="material-symbols-outlined text-[16px]">checklist</span>
+</span>
+<h4 class="font-title-md text-title-md text-on-surface">Recommended User Verification (3)</h4>
+</div>
+<ul class="flex flex-col gap-2">
+<li class="p-space-sm rounded-xl bg-surface-container-low flex items-start gap-2">
+<span class="material-symbols-outlined text-[18px] text-tertiary flex-shrink-0 mt-0.5">check</span>
+<span class="font-body-md text-body-md text-on-surface">Check verified source code on Arbitrum Sepolia block explorer.</span>
+</li>
+<li class="p-space-sm rounded-xl bg-surface-container-low flex items-start gap-2">
+<span class="material-symbols-outlined text-[18px] text-tertiary flex-shrink-0 mt-0.5">check</span>
+<span class="font-body-md text-body-md text-on-surface">Verify protocol timelock parameters and multi-sig administrative keys.</span>
+</li>
+<li class="p-space-sm rounded-xl bg-surface-container-low flex items-start gap-2">
+<span class="material-symbols-outlined text-[18px] text-tertiary flex-shrink-0 mt-0.5">check</span>
+<span class="font-body-md text-body-md text-on-surface">Execute test deposit with disposable testnet gas before granting max allowances.</span>
+</li>
+</ul>
+</div>
+<!-- Strict Limitations Notice (2 items) -->
+<div class="p-space-md rounded-2xl bg-surface-container-high/70 flex flex-col gap-1.5 shadow-[inset_2px_2px_4px_rgba(166,153,142,0.2)]">
+<span class="font-label-caps text-label-caps uppercase text-primary font-bold">Strict Protocol Limitations</span>
+<div class="flex flex-col gap-1 font-body-sm text-body-sm text-on-surface-variant">
+<p>• <strong>Testnet Scope Only:</strong> Relies exclusively on indexed Arbitrum Sepolia subgraphs and test transactions.</p>
+<p>• <strong>Zero Guarantee:</strong> Synthesizer flags statistical flags only and never certifies economic security or audit immunity.</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- PAYMENT & VERIFICATION EVIDENCE FOOTER CARD -->
+<section class="clay-card bg-surface-container-lowest rounded-lg p-space-lg sm:p-space-xl flex flex-col gap-space-lg">
+<div class="flex flex-col sm:flex-row sm:items-center justify-between gap-space-sm">
+<div class="flex items-center gap-space-xs">
+<span class="w-8 h-8 rounded-full bg-secondary-fixed text-secondary flex items-center justify-center">
+<span class="material-symbols-outlined text-[18px]">receipt_long</span>
+</span>
+<h3 class="font-headline-sm text-headline-sm text-on-surface">On-Chain Micropayment Receipt (Hedera)</h3>
+</div>
+<!-- Explorer Hash Pill Button -->
+<a class="clay-pill bg-surface-container-low hover:bg-surface-container text-primary font-mono-data text-body-sm px-space-md py-1.5 rounded-full flex items-center gap-2 transition-transform active:translate-y-0.5" href="https://hashscan.io/testnet" rel="noreferrer" target="_blank">
+<span class="material-symbols-outlined text-[16px] text-secondary">link</span>
+<span>0.0.8231465@1757341321.000492812</span>
+<span class="material-symbols-outlined text-[14px]">open_in_new</span>
+</a>
+</div>
+<!-- Settlement Entity Details Grid -->
+<div class="grid grid-cols-1 md:grid-cols-3 gap-space-md">
+<div class="p-space-md rounded-2xl bg-surface-container-low flex flex-col gap-1 shadow-[inset_2px_2px_4px_rgba(166,153,142,0.25)]">
+<span class="font-label-caps text-label-caps uppercase text-on-surface-variant">Payer Account</span>
+<span class="font-mono-data text-title-md font-bold text-on-surface">0.0.8231465</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">ChainGuard Client Agent</span>
+</div>
+<div class="p-space-md rounded-2xl bg-surface-container-low flex flex-col gap-1 shadow-[inset_2px_2px_4px_rgba(166,153,142,0.25)]">
+<span class="font-label-caps text-label-caps uppercase text-on-surface-variant">Receiver / Sentinel Vault</span>
+<span class="font-mono-data text-title-md font-bold text-primary">0.0.4912044</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Facilitator Treasury Node</span>
+</div>
+<div class="p-space-md rounded-2xl bg-surface-container-low flex flex-col gap-1 shadow-[inset_2px_2px_4px_rgba(166,153,142,0.25)]">
+<span class="font-label-caps text-label-caps uppercase text-on-surface-variant">Settlement Amount</span>
+<span class="font-mono-data text-title-md font-bold text-secondary">100,000 tinybars</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">≈ 0.001 HBAR testnet value</span>
+</div>
+</div>
+<!-- Mandatory Educational Disclaimer Callout Banner -->
+<div class="rounded-2xl bg-secondary-fixed/30 p-space-md flex items-start gap-space-sm">
+<span class="material-symbols-outlined text-[24px] text-secondary flex-shrink-0 mt-0.5">policy</span>
+<p class="font-body-md text-body-md text-on-surface leading-relaxed">
+<strong class="font-semibold text-primary">Mandatory Screening Notice:</strong> This report is an educational screening result based on indexed testnet data. It is not financial advice and does not guarantee that an address or transaction is safe. Always conduct comprehensive manual source code reviews and simulate transactions before committing capital.
+      </p>
+</div>
+</section>
+</div>
+<script>
+  let currentSubjectType = 'protocol';
+  const demoAddresses = [
+    '0x1f98431c8aD98523631AE4a59f267346ea31F984', // Uniswap V3 Factory / Pool
+    '0x3e72812e4fa5a5446f73a658b6907d0e1852d27f', // Arbitrum Sepolia Token Contract
+    '0x82af49447d8a07e3bd95bd0d56f35241523fbab1'  // WETH / Mock Pair
+  ];
+  let currentDemoIdx = 0;
+
+  function setSubjectType(type) {
+    currentSubjectType = type;
+    const walletBtn = document.getElementById('toggleWallet');
+    const protocolBtn = document.getElementById('toggleProtocol');
+
+    if (type === 'wallet') {
+      walletBtn.className = 'px-space-md py-1 rounded-full font-title-md text-title-md transition-all clay-pill bg-surface-container-lowest text-primary font-semibold shadow-sm';
+      protocolBtn.className = 'px-space-md py-1 rounded-full font-title-md text-title-md transition-all text-on-surface-variant hover:text-on-surface';
+    } else {
+      protocolBtn.className = 'px-space-md py-1 rounded-full font-title-md text-title-md transition-all clay-pill bg-surface-container-lowest text-primary font-semibold shadow-sm';
+      walletBtn.className = 'px-space-md py-1 rounded-full font-title-md text-title-md transition-all text-on-surface-variant hover:text-on-surface';
+    }
+  }
+
+  function cycleDemoAddress() {
+    currentDemoIdx = (currentDemoIdx + 1) % demoAddresses.length;
+    const input = document.getElementById('contractAddressInput');
+    input.value = demoAddresses[currentDemoIdx];
+    input.classList.add('bg-secondary-fixed/20');
+    setTimeout(() => {
+      input.classList.remove('bg-secondary-fixed/20');
+    }, 400);
+  }
+
+  function simulateAuditFlow() {
+    const btn = document.getElementById('runAuditBtn');
+    const originalContent = btn.innerHTML;
+    
+    btn.disabled = true;
+    btn.innerHTML = `
+      <span class="material-symbols-outlined text-[20px] animate-spin text-secondary-fixed">autorenew</span>
+      <span class="font-semibold tracking-wide">Querying Subgraph &amp; Hedera...</span>
+    `;
+
+    setTimeout(() => {
+      btn.innerHTML = `
+        <span class="material-symbols-outlined text-[20px] text-tertiary-fixed">check_circle</span>
+        <span class="font-semibold tracking-wide">Report Refreshed!</span>
+      `;
+      setTimeout(() => {
+        btn.innerHTML = originalContent;
+        btn.disabled = false;
+      }, 1500);
+    }, 1200);
+  }
+</script></main><footer class="w-full bg-surface-container-low mt-space-3xl py-space-2xl"><div class="max-w-[1200px] mx-auto px-space-lg flex flex-col gap-space-lg"><div class="clay-card bg-surface-container-lowest p-space-lg rounded-xl flex items-start sm:items-center gap-space-md"><div class="p-space-xs rounded-full bg-secondary-fixed text-on-secondary-fixed flex-shrink-0"><span class="material-symbols-outlined text-[24px]">verified</span></div><div class="flex-1"><p class="font-body-md text-body-md text-on-surface-variant leading-relaxed"><strong class="text-on-surface font-semibold">Educational Screening Notice:</strong> This report is an educational screening result based on indexed testnet data. It is not financial advice and does not guarantee that an address or transaction is safe.</p></div></div><div class="flex flex-col md:flex-row items-center justify-between gap-space-md pt-space-xs"><div class="flex items-center gap-space-sm"><span class="font-label-caps text-label-caps text-on-surface-variant uppercase tracking-wider">© 2026 ChainGuard Lite</span><span class="text-outline-variant">•</span><span class="font-body-sm text-body-sm text-on-surface-variant">Crafted for <span class="font-semibold text-primary">ETHOnline 2026</span></span></div><div class="flex flex-wrap items-center justify-center gap-space-md"><div class="flex items-center gap-1.5 text-on-surface-variant font-mono-data text-mono-data"><span class="w-2 h-2 rounded-full bg-tertiary-container"></span><span>Subgraphs by The Graph</span></div><div class="flex items-center gap-1.5 text-on-surface-variant font-mono-data text-mono-data"><span class="w-2 h-2 rounded-full bg-secondary-container"></span><span>Hedera x402 Micropayments</span></div></div></div></div></footer></body></html>
