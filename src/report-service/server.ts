@@ -34,13 +34,53 @@ assertTestnetOnly();
 function build402Middleware() {
   const price = parseFloat(process.env.X402_PRICE || '0.001');
   const receiverId = process.env.HEDERA_RECEIVER_ACCOUNT_ID || '0.0.DEV_MODE';
+  const hasRealCredentials = Boolean(
+    process.env.HEDERA_RECEIVER_ACCOUNT_ID &&
+    !process.env.HEDERA_RECEIVER_ACCOUNT_ID.includes('REPLACE_ME') &&
+    process.env.X402_FACILITATOR_URL
+  );
+
+  if (hasRealCredentials) {
+    const { paymentMiddlewareFromConfig } = require('@x402/express') as any;
+    const { HTTPFacilitatorClient, x402ResourceServer } = require('@x402/core/server') as any;
+    const { ExactHederaScheme } = require('@x402/hedera/exact/server') as any;
+    const facilitator = new HTTPFacilitatorClient({
+      url: process.env.X402_FACILITATOR_URL,
+    });
+    const server = new x402ResourceServer(facilitator)
+      .register('hedera:*', new ExactHederaScheme({
+        defaultAssets: {
+          'hedera:testnet': { asset: '0.0.0', decimals: 8 },
+        },
+      }));
+
+    return paymentMiddlewareFromConfig(
+      {
+        'POST /v1/safety-report': {
+          accepts: {
+            scheme: 'exact',
+            network: 'hedera:testnet',
+            payTo: receiverId,
+            price,
+            description: 'ChainGuard Lite safety report',
+            mimeType: 'application/json',
+          },
+        },
+      },
+      facilitator,
+      [{ network: 'hedera:*', server }],
+      undefined,
+      undefined,
+      false
+    );
+  }
 
   return (req: express.Request, res: express.Response, next: express.NextFunction) => {
     const paymentHeader =
       req.headers['x-payment'] ||
       req.headers['x402-payment'];
 
-    if (!paymentHeader) {
+    if (!paymentHeader || !String(paymentHeader).startsWith('dev-payment-')) {
       // Emit exact structure that @x402/hedera createPartiallySignedTransferTransaction expects
       return res.status(402).json({
         error: 'Payment Required',

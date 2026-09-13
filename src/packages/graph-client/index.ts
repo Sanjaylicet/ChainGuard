@@ -133,6 +133,7 @@ export async function queryAddressActivity(
   try {
     // Try address-specific query first
     let raw: unknown;
+    let usedFallback = false;
     try {
       raw = await Promise.race([
         client.request(ADDRESS_ACTIVITY_QUERY, { address: address.toLowerCase() }),
@@ -141,6 +142,7 @@ export async function queryAddressActivity(
     } catch (queryErr: any) {
       // If the address-level query fails (schema mismatch, no data), fallback to simple query
       console.warn('[graph-client] Address query failed, using simple fallback query:', queryErr?.message);
+      usedFallback = true;
       raw = await Promise.race([
         client.request(SIMPLE_TOKEN_QUERY),
         timeoutPromise,
@@ -153,7 +155,7 @@ export async function queryAddressActivity(
     }
 
     const data = parsed.success ? parsed.data : { swaps: [], deposits: [], withdrawals: [] };
-    return normalizeEvidence(address, data, queriedAt);
+  return normalizeEvidence(address, data, queriedAt, !usedFallback && parsed.success);
   } catch (err: any) {
     if (err?.message?.includes('timed out')) {
       throw new Error('Graph provider request timed out. Please try again.');
@@ -181,7 +183,8 @@ export async function queryAddressActivity(
 function normalizeEvidence(
   address: string,
   data: { swaps: any[]; deposits: any[]; withdrawals: any[] },
-  queriedAt: string
+  queriedAt: string,
+  dataComplete: boolean
 ): NormalizedEvidence {
   const allEvents = [
     ...(data.swaps || []),
@@ -229,9 +232,6 @@ function normalizeEvidence(
     if (swap.token1?.id) protocolSet.add(swap.token1.id);
   }
   const protocolInteractions = protocolSet.size;
-
-  // dataComplete = we got a response (even if zero results)
-  const dataComplete = true;
 
   return {
     address,
