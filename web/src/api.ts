@@ -1,6 +1,8 @@
 import type { AgentReportResponse } from '../../src/packages/shared/types';
 
-const AGENT_URL = '/api';
+// In production (Vercel), set VITE_AGENT_URL to your ngrok/Railway/Render URL.
+// In local dev, Vite's proxy forwards /api → localhost:3001 automatically.
+const AGENT_URL = (import.meta.env.VITE_AGENT_URL as string | undefined) || '/api';
 
 export async function requestReport(
   address: string,
