@@ -5,6 +5,7 @@
   "main": "dist/index.js",
   "scripts": {
     "build": "tsc",
+    "vercel-build": "vite build web --config web/vite.config.ts",
     "check:providers": "tsx scripts/check-providers.ts",
     "test:paid-request": "tsx scripts/test-paid-request.ts",
     "dev:report-service": "tsx watch src/report-service/server.ts",
