@@ -14,7 +14,15 @@ if (process.env.DEMO_ONLY_TESTNET !== 'true') {
 
 const app = express();
 app.use(express.json());
-app.use(cors({ origin: '*' }));
+app.use(cors({
+  origin: '*',
+  methods: ['GET', 'POST', 'OPTIONS'],
+  allowedHeaders: ['Content-Type', 'Authorization', 'x-payment', 'x402-payment', 'ngrok-skip-browser-warning'],
+  preflightContinue: false,
+  optionsSuccessStatus: 204,
+}));
+// Explicitly handle OPTIONS preflight for all routes
+app.options('*', cors());
 
 // Health endpoint
 app.get('/health', (_req, res) => {

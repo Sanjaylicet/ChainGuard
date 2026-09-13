@@ -8,9 +8,20 @@ export async function requestReport(
   address: string,
   subjectType: 'wallet' | 'protocol'
 ): Promise<AgentReportResponse> {
-  const res = await fetch(`${AGENT_URL}/report`, {
+  // When routing through ngrok, the free tier shows a browser warning page
+  // that intercepts ALL requests including OPTIONS preflight — blocking CORS.
+  // Fix: append the bypass param in the URL itself so both OPTIONS and POST
+  // requests skip the warning page before reaching the agent server.
+  const url = AGENT_URL.startsWith('http')
+    ? `${AGENT_URL}/report?ngrok-skip-browser-warning=true`
+    : `${AGENT_URL}/report`;
+
+  const res = await fetch(url, {
     method: 'POST',
-    headers: { 'Content-Type': 'application/json' },
+    headers: {
+      'Content-Type': 'application/json',
+      'ngrok-skip-browser-warning': 'true',
+    },
     body: JSON.stringify({ address, subjectType }),
   });
 
